@@ -1,0 +1,43 @@
+class SuperDemo
+{
+    public static void main(String A[])
+    {
+        Derived dobj = new Derived();   //Error
+
+        dobj.gun();
+    }
+}
+
+class Base
+{
+    public int i;
+
+    public Base(int no)
+    {
+        System.out.println("Inside Base constrcutor");
+        this.i = no;
+    }
+
+    public void fun()
+    {
+        System.out.println("Inside Base fun");
+    }
+}
+
+class Derived extends Base
+{
+    public int i;
+
+    public Derived()
+    {
+        System.out.println("Inside Derived Constructor");
+        this.i = 21;
+    }
+
+    public void gun()
+    {
+        System.out.println("Inside gun of Derived");
+        System.out.println("Value of i : "+i);
+        System.out.println("Value of i from Base :"+super.i);
+    }
+}
